@@ -1,10 +1,13 @@
 {
-    "name": "Getting Started Example",
-    "version": "1.0",
-    "description": "Build an Extension!",
-    "background": {
-        "scripts": ["background.js"],
-        "persistent": false
-    },
-    "manifest_version": 2
+    "name": "YtTrack",
+    "version": "0.1",
+    "description": "Tracks youtube views.",
+    "permissions": ["activeTab", "declarativeContent", "storage"],
+    "content_scripts": [{
+        "matches": ["*://www.youtube.com/*"],
+        "js": ["jquery-3.2.1.min.js", "content.js"],
+        "css": ["content.css"]
+    }],
+    "manifest_version": 2,
+    "options_page": "options.html"
 }
